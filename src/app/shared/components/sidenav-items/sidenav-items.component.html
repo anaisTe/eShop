@@ -1,0 +1,6 @@
+<ul>
+    <p>Categorías</p>
+    <li *ngFor="let item of ItemSidenav | async" routerLinkActive="active" ariaCurrentWhenActive="page">
+      {{item.textName}}
+    </li>  
+</ul>

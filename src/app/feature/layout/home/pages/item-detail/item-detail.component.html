@@ -1,0 +1,36 @@
+<section class="mb-3">
+    <a mat-button (click)="backPage()">
+        <mat-icon>arrow_back_ios</mat-icon>
+        Regresar
+    </a>
+</section>
+<mat-spinner *ngIf="loading" class="m-auto"></mat-spinner>
+<ng-container *ngIf="product$ | async as item; else noProduct">
+    <section class="detail-container" [ngClass]="!loading ? 'detail-container' : 'd-none'">
+        <div class="col-md-12 col-lg-8 text-center">
+            <img src={{item.image}} alt="Photo of product">
+        </div>
+        <div class="col-md-12 col-lg-4 detail-content">
+            <p class="detail-content-title">{{item.name}}</p>
+            <p class="detail-content-description">{{item.description}}</p>
+            <p class="detail-content-price">{{item.price}}</p>
+    
+            <div class="d-flex align-items-center justify-content-between w-50 pt-4">
+                <button mat-mini-fab>
+                    <mat-icon>remove</mat-icon>
+                </button>
+                <p class="mb-0">1</p>
+                <button mat-mini-fab>
+                    <mat-icon>add</mat-icon>
+                </button>
+            </div>
+            <div class="my-5">
+                <button mat-flat-button class="w-100" color="primary">Agregar al carrito</button>
+            </div>
+        </div>
+    </section>
+</ng-container>
+
+<ng-template #noProduct>
+    <p>Producto no encontrado.</p>
+</ng-template>

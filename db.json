@@ -1,0 +1,66 @@
+{
+  "sideNavMenu": [
+    {
+      "textName": "Oficina",
+      "id": "c694"
+    },
+    {
+      "textName": "Cocina",
+      "id": "378f"
+    },
+    {
+      "textName": "Tecnología",
+      "id": "2214"
+    }
+  ],
+  "products": [
+    {
+      "id": "10234",
+      "image": "https://minisope.vtexassets.com/arquivos/ids/183029-1600-1600?v=637795713676300000&width=1600&height=1600&aspect=true",
+      "name": "Cinta Masking - We Bare Bears",
+      "description": "Cinta masking tape we bare bears modelos mixtos - We Bare Bears",
+      "price": "S/ 4.90",
+      "category": "oficina"
+    },
+    {
+      "id": "10235",
+      "image": "https://minisope.vtexassets.com/arquivos/ids/274137-1200-1200?v=638416606174870000&width=1200&height=1200&aspect=true",
+      "name": "Post It Serie Navy Blue - Navy Blue",
+      "description": "Post it fichas de planificación 7x30 hojas serie navy blue - Navy Blue",
+      "price": "S/ 7.90",
+      "category": "oficina"
+    },
+    {
+      "id": "10334",
+      "image": "https://minisope.vtexassets.com/arquivos/ids/249378-800-800?v=638282689428830000&width=800&height=800&aspect=true",
+      "name": "Lonchera Panda Gris - We Bare Bears",
+      "description": "Lleva tus alimentos en perfecto orden y en un mismo lugar con la Lonchera We Bare Bears Panda en color Gris, ideal para cargar tus recipientes a la oficina o incluso llevarlos de excursión. Su diseño y material de fabricación la hacen ideal para conservar el calor por más tiempo. ",
+      "price": "S/ 24.90",
+      "category": "cocina"
+    },
+    {
+      "id": "10335",
+      "image": "https://minisope.vtexassets.com/arquivos/ids/223420-1600-1600?v=638109670050930000&width=1600&height=1600&aspect=true",
+      "name": "Paño De Limpieza De Lana Paquete De 6pzs 25*25cm - Miniso",
+      "description": "La 1 cm x An 1 cm x Al 1 cm G 1",
+      "price": "S/ 11.90",
+      "category": "cocina"
+    },
+    {
+      "id": "10434",
+      "image": "https://minisope.vtexassets.com/arquivos/ids/194316-1200-1200?v=637902633736570000&width=1200&height=1200&aspect=true",
+      "name": "Teclado Rgb Para Gaming Modelo A8-9 Negro - Miniso",
+      "description": "La 48.2 cm x An 18 cm x Al 3 cm G 0.362",
+      "price": "S/ 74.90",
+      "category": "tecnologia"
+    },
+    {
+      "id": "10435",
+      "image": "https://minisope.vtexassets.com/arquivos/ids/235378-1200-1200?v=638186134410200000&width=1200&height=1200&aspect=true",
+      "name": "Soporte Para Laptop Para Escritorio Blanco - Miniso",
+      "description": "La 28 cm x An 5 cm x Al 15 cm G 0.52",
+      "price": "S/ 29.90",
+      "category": "tecnologia"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+.card-content {
+  max-width: 400px;
+  text-decoration: none;
+  color: #212121;
+
+  img {
+    width: 100%;
+  }
+
+  &-title {
+    font-size: 18px;
+  }
+
+  &-description {
+    display: -webkit-box;
+    font-size: 14px;
+    flex: 1;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &-price {
+    font-size: 22px;
+    margin-bottom: 0;
+  }
+}
+  
+.example-header-image {
+  background-size: cover;
+}
+  
+.mat-mdc-card {
+  min-height: 520px;
+}
+
+.mdc-card__actions {
+  padding: 0px 8px 16px;
+  position: absolute;
+  bottom: 0;
+  width: -webkit-fill-available;
+}
+
+@media(max-width: 768px) {
+  .card-content {
+    max-width: 100%;
+
+    img {
+      width: 60%;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav [mode]="'side'" class="custom-sidenav">
+    <app-sidenav-items></app-sidenav-items>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="custom-content">
+    <app-header></app-header>
+
+    <div class="custom-content-routerOutlet">
+      <div class="container mb-5">
+        <router-outlet></router-outlet>
+      </div>
+      <app-footer class="mt-auto"></app-footer>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
