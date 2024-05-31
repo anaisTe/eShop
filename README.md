@@ -1,6 +1,6 @@
 # EShop
 
-## Clonar el repositorio
+## Clone repository
 Run `git clone https://github.com/anaisTe/tejada-angie.git`
 
 This project was generated with [Angular CLI] version 17.2.3.
