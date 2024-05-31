@@ -1,6 +1,9 @@
 <ul>
     <p>Categorías</p>
-    <li *ngFor="let item of ItemSidenav | async" routerLinkActive="active" ariaCurrentWhenActive="page">
-      {{item.textName}}
-    </li>  
+    <ng-container *ngFor="let item of ItemSidenav | async">
+      <li routerLinkActive="active" ariaCurrentWhenActive="page"
+        (click)="listByCategory(item.category)">
+        {{item.textName}}
+      </li>
+    </ng-container>
 </ul>

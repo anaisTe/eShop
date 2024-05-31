@@ -11,6 +11,8 @@ export class CartComponent implements OnInit {
 
   products: IProduct[] = [];
 
+  itemTotal: number = 0;
+
   constructor(
     private _basketCartService: CartService
   ) {}
@@ -19,11 +21,13 @@ export class CartComponent implements OnInit {
     this._basketCartService.getItemsCart().subscribe({
       next: (val) => {
         this.products = val
+        this.itemTotal = this.products.length
       }
     })
+
   }
 
-  deleteItem(id: string) {
+  deleteItem(id: number) {
     this._basketCartService.deleteItemBasket(id);
   }
 }

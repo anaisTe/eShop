@@ -2,15 +2,18 @@
   "sideNavMenu": [
     {
       "textName": "Oficina",
-      "id": "c694"
+      "id": "c694",
+      "category": "oficina"
     },
     {
       "textName": "Cocina",
-      "id": "378f"
+      "id": "378f",
+      "category": "cocina"
     },
     {
       "textName": "Tecnología",
-      "id": "2214"
+      "id": "2214",
+      "category": "tecnologia"
     }
   ],
   "products": [

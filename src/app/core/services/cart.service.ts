@@ -22,8 +22,12 @@ export class CartService {
     return this._basketItemSub.asObservable();
   }
 
-  deleteItemBasket(itemId: string) {
-    this.basketItem = this.basketItem.filter( product => product.id !== itemId);
+  // deleteItemBasket(itemId: string) {
+  //   this.basketItem = this.basketItem.filter( product => product.id !== itemId);
+  //   this._basketItemSub.next(this.basketItem)
+  // }
+  deleteItemBasket(itemIndex: number) {
+    this.basketItem.splice(itemIndex, 1);
     this._basketItemSub.next(this.basketItem)
   }
 

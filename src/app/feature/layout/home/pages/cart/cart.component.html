@@ -1,42 +1,43 @@
 <mat-dialog-content>
-    <p class="title">Carrito</p>
+    <div class="d-flex justify-content-between align-items-center">
+        <p class="title">Carrito <span>( {{itemTotal}} Productos )</span></p>
+        <button mat-icon-button mat-dialog-close>
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+    
     <section class="cart-container">
-        <section class="cart-item-list">
-            <ng-container *ngIf="products.length > 0 else emptyList">
-                <ng-container *ngFor="let item of products">
-                    <div class="cart-content">
-                        <div class="d-flex gap-3">
-                            <img [src]=item.image alt="Photo of product" width="100px" height="100px">
-                            <div class="cart-content-detail">
-                                <p class="cart-content-detail-title">{{item.name}}</p>
-                                <p class="cart-content-detail-price">{{item.price}}</p>
-                    
-                                <app-count></app-count>
-            
-                            </div>
-                        </div>
-                        <div class="cart-content-detail-delete">
-                            <button mat-icon-button (click)="deleteItem(item.id)">
-                                <mat-icon fontSet="material-icons-outlined">delete</mat-icon>
-                            </button>
+        <ng-container *ngIf="products.length > 0 else emptyList">
+            <ng-container *ngFor="let item of products; let indice = index">
+                <div class="cart-content">
+                    <div class="d-flex gap-3">
+                        <img [src]=item.image alt="Photo of product" width="100px" height="100px">
+                        <div class="cart-content-detail">
+                            <p class="cart-content-detail-title">{{item.name}}</p>
+                            <p class="cart-content-detail-price">{{item.price}}</p>
                         </div>
                     </div>
-                </ng-container>
-            </ng-container>
-            <ng-template #emptyList>
-                <div class="empty_basket">
-                    <p class="text-center mb-0">Canasta vacía.</p>
-                    <img src="assets/undraw_empty_cart.png" alt="empty_cart" width="200px">
+                    <div class="cart-content-detail-delete">
+                        <button mat-icon-button (click)="deleteItem(indice)">
+                            <mat-icon fontSet="material-icons-outlined">delete</mat-icon>
+                        </button>
+                    </div>
                 </div>
-            </ng-template>
-        </section>
+            </ng-container>
+        </ng-container>
+        <ng-template #emptyList>
+            <div class="empty_basket">
+                <p class="text-center mb-0">Canasta vacía.</p>
+                <img src="assets/undraw_empty_cart.png" alt="empty_cart" width="200px">
+            </div>
+        </ng-template>
     </section>
 <mat-dialog-actions>
     <div class="resumen-content">
-        <div class="resumen-content-detail">
+        <!-- <div class="resumen-content-detail">
             <p>Total</p>
             <span>S/ 168.22</span>
-        </div>
+        </div> -->
         <div class="resumen-content-btns">
             <button mat-flat-button mat-dialog-close color="primary">Pagar</button>
             <button mat-button mat-dialog-close>Seguir comprando</button>
