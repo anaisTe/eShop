@@ -19,6 +19,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SidenavItemsComponent } from './components/sidenav-items/sidenav-items.component';
+import { CountComponent } from './components/count/count.component';
 
 const MATERIAL = [
   MatFormFieldModule,
@@ -37,7 +38,8 @@ const MATERIAL = [
   declarations: [
     HeaderComponent, 
     FooterComponent, 
-    SidenavItemsComponent
+    SidenavItemsComponent, 
+    CountComponent
   ],
   imports: [
     ...MATERIAL, 
@@ -47,7 +49,8 @@ const MATERIAL = [
     ...MATERIAL, 
     HeaderComponent, 
     FooterComponent,
-    SidenavItemsComponent
+    SidenavItemsComponent,
+    CountComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

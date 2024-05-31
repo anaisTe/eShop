@@ -1,0 +1,11 @@
+<div class="d-flex align-items-center gap-4 pt-4">
+    <button mat-mini-fab (click)="quitarItem()" [disabled]="countNum <= 1">
+        <mat-icon>remove</mat-icon>
+    </button>
+
+    <p class="mb-0">{{countNum}}</p>
+
+    <button mat-mini-fab (click)="addItem()">
+        <mat-icon>add</mat-icon>
+    </button>
+</div>

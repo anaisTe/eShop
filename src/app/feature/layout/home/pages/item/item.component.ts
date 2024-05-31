@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductosService } from '../../../../../core/services/productos.service';
+import { CartService } from '../../../../../core/services/cart.service';
+import { IProduct } from '../../../../../core/models/products.model';
 
 @Component({
   selector: 'app-home',
@@ -9,21 +11,22 @@ import { ProductosService } from '../../../../../core/services/productos.service
 })
 export class ItemComponent {
 
+  productsList = this._productService.getProducts();
+
+  ItemsList: IProduct[] = [];
+
   constructor(
     private route: Router,
-    private _productService: ProductosService
+    private _productService: ProductosService,
+    private _basketCartService: CartService
   ) {}
-
-  ItemProducts = this._productService.getProducts();
 
 
   itemDetail(id: string) {
-    console.log('opened', id);
     this.route.navigate(['inicio/detalle', id])
   }
 
-  btnAdd() {
-    console.log('add');
-    
+  btnAdd(item: IProduct) {
+    this._basketCartService.addItemToBasket(item);
   }
 }

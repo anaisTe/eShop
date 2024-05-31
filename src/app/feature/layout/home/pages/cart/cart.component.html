@@ -1,73 +1,46 @@
-<p class="title">Carrito</p>
-<section class="cart-container">
-
-    <section class="cart-item-list">
-        <div class="cart-content">
-            <div class="d-flex gap-3">
-                <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu" width="100px" height="100px">
-                <div class="cart-content-detail">
-                    <p class="cart-content-detail-title">Titulo</p>
-                    <p class="cart-content-detail-price">Precio</p>
-        
-                    <div class="d-flex align-items-center justify-content-between gap-4">
-                        <button mat-mini-fab>
-                            <mat-icon>remove</mat-icon>
-                        </button>
-                        <p class="mb-0">1</p>
-                        <button mat-mini-fab>
-                            <mat-icon>add</mat-icon>
-                        </button>
+<mat-dialog-content>
+    <p class="title">Carrito</p>
+    <section class="cart-container">
+        <section class="cart-item-list">
+            <ng-container *ngIf="products.length > 0 else emptyList">
+                <ng-container *ngFor="let item of products">
+                    <div class="cart-content">
+                        <div class="d-flex gap-3">
+                            <img [src]=item.image alt="Photo of product" width="100px" height="100px">
+                            <div class="cart-content-detail">
+                                <p class="cart-content-detail-title">{{item.name}}</p>
+                                <p class="cart-content-detail-price">{{item.price}}</p>
+                    
+                                <app-count></app-count>
+            
+                            </div>
+                        </div>
+                        <div class="cart-content-detail-delete">
+                            <button mat-icon-button (click)="deleteItem(item.id)">
+                                <mat-icon fontSet="material-icons-outlined">delete</mat-icon>
+                            </button>
+                        </div>
                     </div>
+                </ng-container>
+            </ng-container>
+            <ng-template #emptyList>
+                <div class="empty_basket">
+                    <p class="text-center mb-0">Canasta vacía.</p>
+                    <img src="assets/undraw_empty_cart.png" alt="empty_cart" width="200px">
                 </div>
-            </div>
-            <div class="cart-content-detail-delete">
-                <button mat-icon-button>
-                    <mat-icon fontSet="material-icons-outlined">delete</mat-icon>
-                </button>
-            </div>
-        </div>
-        <div class="cart-content">
-            <div class="d-flex gap-3">
-                <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu" width="100px" height="100px">
-                <div class="cart-content-detail">
-                    <p class="cart-content-detail-title">Titulo</p>
-                    <p class="cart-content-detail-price">Precio</p>
-        
-                    <div class="d-flex align-items-center justify-content-between gap-4">
-                        <button mat-mini-fab>
-                            <mat-icon>remove</mat-icon>
-                        </button>
-                        <p class="mb-0">1</p>
-                        <button mat-mini-fab>
-                            <mat-icon>add</mat-icon>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="cart-content-detail-delete">
-                <button mat-icon-button>
-                    <mat-icon fontSet="material-icons-outlined">delete</mat-icon>
-                </button>
-            </div>
-        </div>
+            </ng-template>
+        </section>
     </section>
-
-
-
+<mat-dialog-actions>
     <div class="resumen-content">
-        <div class="resumen-content-title">
-            <mat-icon>shopping_cart</mat-icon>
-            <p>Resumen de la compra</p>
-        </div>
         <div class="resumen-content-detail">
             <p>Total</p>
             <span>S/ 168.22</span>
         </div>
         <div class="resumen-content-btns">
-            <button mat-flat-button color="primary">Pagar</button>
-            <button mat-button>Seguir comprando</button>
+            <button mat-flat-button mat-dialog-close color="primary">Pagar</button>
+            <button mat-button mat-dialog-close>Seguir comprando</button>
         </div>
-    </div>      
+    </div>  
+</mat-dialog-actions>
 
-
-</section>

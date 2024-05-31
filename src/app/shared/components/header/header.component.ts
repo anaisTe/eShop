@@ -19,7 +19,7 @@ export class HeaderComponent {
 
   itemsList() {
     // this.router.navigateByUrl('inicio/canasta')
-    this.dialog.open(CartComponent)
+    this.dialog.open(CartComponent, { disableClose: true })
   }
 
   openSideNav() {
