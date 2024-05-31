@@ -29,8 +29,7 @@ export class SidenavItemsComponent implements OnInit {
       next: (val) => {
         const itemCategory = val.filter( list => list.category.toLocaleLowerCase() === category.toLocaleLowerCase());
         this.productsByCategory = itemCategory;
-        console.log('side', this.productsByCategory);
-        
+        this._sidenavService.updatePageProducts(this.productsByCategory)
       }
     })
     
