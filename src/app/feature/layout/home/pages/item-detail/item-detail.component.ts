@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ProductosService } from '../../../../../core/services/productos.service';
 import { IProduct } from '../../../../../core/models/products.model';
 import { Observable, finalize } from 'rxjs';
+import { CartService } from '../../../../../core/services/cart.service';
 
 @Component({
   selector: 'app-item-detail',
@@ -18,7 +19,8 @@ export class ItemDetailComponent implements OnInit {
   constructor(
     private route: Router,
     private _productService: ProductosService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private _basketCartService: CartService
   ) { }
 
 
@@ -35,6 +37,9 @@ export class ItemDetailComponent implements OnInit {
     );
   }
 
+  btnAdd(item: IProduct) {
+    this._basketCartService.addItemToBasket(item);
+  }
 
 
   backPage() {

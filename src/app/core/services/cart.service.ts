@@ -8,11 +8,10 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class CartService {
 
   basketItem: IProduct[] = [];
-  _basketItemSub: BehaviorSubject<IProduct[]>;
+  _basketItemSub: BehaviorSubject<IProduct[]> = new BehaviorSubject<IProduct[]>([]);
+  basketForBaget$ = this._basketItemSub.asObservable();
 
-  constructor() { 
-    this._basketItemSub = new BehaviorSubject<IProduct[]>([])
-  }
+  constructor() { }
 
   addItemToBasket(item: IProduct) {
     this.basketItem.push(item);
@@ -26,5 +25,9 @@ export class CartService {
   deleteItemBasket(itemId: string) {
     this.basketItem = this.basketItem.filter( product => product.id !== itemId);
     this._basketItemSub.next(this.basketItem)
+  }
+
+  itemsLength() {
+    return this.basketItem.length;
   }
 }

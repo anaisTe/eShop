@@ -15,6 +15,8 @@ export class ItemComponent {
 
   ItemsList: IProduct[] = [];
 
+  label = 'Agregar al carrito';
+
   constructor(
     private route: Router,
     private _productService: ProductosService,
